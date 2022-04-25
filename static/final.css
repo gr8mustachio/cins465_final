@@ -1,0 +1,27 @@
+ul {
+    font-family: "Lucida Console", "Courier New", monospace;
+    /* border: 1px solid brown; */
+}
+
+body {
+    background-color: cyan !important;
+}
+
+h1 {
+    font-family: 'Goldman', cursive;
+}
+
+.ct-series-a .ct-bar {
+    /* Colour of your bars */
+    stroke: blue;
+    /* The width of your bars */
+    stroke-width: 15px;
+    /* Yes! Dashed bars! */
+    /* stroke-dasharray: 20px; */
+    /* Maybe you like round corners on your bars? */
+}
+
+.ct-series-b .ct-bar {
+    stroke: purple;
+    stroke-width: 15px;
+}
