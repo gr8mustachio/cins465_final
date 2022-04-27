@@ -1,14 +1,30 @@
 ul {
     font-family: "Lucida Console", "Courier New", monospace;
     /* border: 1px solid brown; */
+    background-color: rgb(40, 42, 54, 255);
+}
+
+.navbar {
+    background-color: rgb(40, 42, 54, 255) !important;
+    border: 10px solid rgba(69, 128, 173, 255);
+    font-family: "Lucida Console", monospace;
+}
+
+a {
+    color: rgb(102, 77, 147, 255);
 }
 
 body {
-    background-color: cyan !important;
+    background-color: rgb(40, 42, 54, 255) !important;
 }
 
 h1 {
     font-family: 'Goldman', cursive;
+    color: rgb(102, 77, 147, 255);
+}
+
+.ct-label {
+    color: white
 }
 
 .ct-series-a .ct-bar {

@@ -24,8 +24,9 @@ urlpatterns = [
     path('', core_views.main),
     path('about/', core_views.about),
     path('food/', food_views.main),
+    path('food/add/', food_views.add),
     path('workouts/', workout_views.main),
-    path('login/', core_views.login),
+    path('login/', core_views.user_login),
     path('logout/', core_views.logout),
     path('join/', core_views.join)
 ]

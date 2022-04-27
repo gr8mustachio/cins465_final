@@ -12,6 +12,7 @@ class FoodCategory(models.Model):
 class FoodItem(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=128)
+    category = models.ForeignKey(FoodCategory, on_delete=models.CASCADE)
     calories = models.PositiveIntegerField()
     sodium = models.PositiveIntegerField()
     protien = models.PositiveIntegerField()
