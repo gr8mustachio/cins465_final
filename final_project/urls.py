@@ -27,6 +27,8 @@ urlpatterns = [
     path('food/add/', food_views.add),
     path('food/edit/<int:id>/', food_views.edit),
     path('workouts/', workout_views.main),
+    path('workouts/add/', workout_views.add),
+    path('workouts/edit/<int:id>/', workout_views.edit),
     path('login/', core_views.user_login),
     path('logout/', core_views.logout),
     path('join/', core_views.join)

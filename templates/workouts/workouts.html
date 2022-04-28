@@ -3,14 +3,68 @@
 
 <head>
     {% load static %}
+    <link rel="stylesheet" href="{% static 'chessboard.css' %}">
     <meta charset="UTF-8">
     {% include 'bootstrap.html' %}
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Caveat&family=Fugaz+One&family=Goldman&family=Staatliches&family=Water+Brush&display=swap" rel="stylesheet">  
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-
+    J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-
+    Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-
+    Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-
+    wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <meta charset="utf-8">
 </head>
 
 <body>
     {% include "nav.html" %}
-    <h1>Workout Page</h1>
+    <center><h1>Workout Page</h1></center>
+    <div class='jumbotron'>
+        <h2>Workouts</h2>
+        {% if not workout_data %}
+            <p>There are no workouts to display</p>
+        {% else %}
+        <table id='workout-table' class='table table-striped table-bordered table-sm' cellspacing='0' width='100%'>
+            <tr>
+                <th>Workout Name</th>
+                <th>Muscle Groups Worked</th>
+                <th>Sets (if applicable)</th>
+                <th>Reps (if applicable)</th>
+                <th>Distance (if applicable)</th>
+                <th>Duration</th>
+                <th>Calories Burned</th>
+                <th>Average Heart Rate</th>
+            </tr>
+            {% for row in workout_data %}
+                <tr>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.musclegroup }}</td>
+                    <td>{{ row.sets }}</td>
+                    <td>{{ row.reps }}</td>
+                    <td>{{ row.distance }}</td>
+                    <td>{{ row.duration }}</td>
+                    <td>{{ row.calsburned }}</td>
+                    <td>{{ row.heartAvg }}</td>
+                    <td>
+                        <a class='btn btn-primary' href="/workouts/edit/{{ row.id }}/">Edit</a>
+                        <a class='btn btn-primary' href="#" onclick='confirmDeleteModal()'>Delete</a>
+    
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+        <form method="GET" action='/workouts/add/'>
+            <input type="submit" id="add-button" class='btn btn-primary' value="Add Workout">
+        </form>
+    </div>
 
 </body>
 

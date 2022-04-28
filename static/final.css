@@ -6,7 +6,7 @@ ul {
 
 .navbar {
     background-color: rgb(40, 42, 54, 255) !important;
-    border: 10px solid rgba(69, 128, 173, 255);
+    border: 10px solid rgba(104, 105, 210, 255);
     font-family: "Lucida Console", monospace;
 }
 
@@ -14,16 +14,27 @@ a {
     color: rgba(234, 108, 141, 255);
 }
 
+p {
+    color: rgba(234, 108, 141, 255);
+    font-family: 'Lucida Console', monospace;
+}
+
 #food_title {
     color: aliceblue !important;
 }
 
-table {
-    border
+td {
+    border-color: rgba(234, 108, 141, 255) !important;
+    /* border-radius: 100px !important; */
 }
 
-#goal-table {
-    /* margin-top: 20px; */
+.btn {
+    background-color: rgba(104, 105, 210, 255);
+}
+
+th {
+    border-color: rgba(234, 108, 141, 255) !important;
+    /* border-radius: 100px !important; */
 }
 
 #add-button {
@@ -38,6 +49,25 @@ body {
     background-color: rgb(40, 42, 54, 255) !important;
 }
 
+hr {
+    background-color: rgba(234, 108, 141, 255);
+}
+
+#bio {
+    font-family: 'Baloo 2', cursive;
+    font-size: 16pt;
+    color: rgba(234, 108, 141, 255);
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+big {
+    margin-left: 20px;
+    color: rgba(234, 108, 141, 255);
+    font-family: 'Baloo 2', cursive;
+    font-size: 20pt;
+}
+
 th {
     color: rgba(234, 108, 141, 255);
     font-family: 'Lucida Console', monospace;
@@ -49,7 +79,7 @@ td {
 }
 
 h1 {
-    font-family: 'Goldman', cursive;
+    font-family: 'Fugaz One', cursive;
     color: rgba(234, 108, 141, 255);
 }
 
