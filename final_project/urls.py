@@ -25,6 +25,7 @@ urlpatterns = [
     path('about/', core_views.about),
     path('food/', food_views.main),
     path('food/add/', food_views.add),
+    path('food/edit/<int:id>/', food_views.edit),
     path('workouts/', workout_views.main),
     path('login/', core_views.user_login),
     path('logout/', core_views.logout),

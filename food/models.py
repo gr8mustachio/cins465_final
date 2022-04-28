@@ -9,7 +9,7 @@ class FoodCategory(models.Model):
     def __str__(self):
         return self.category
 
-class FoodItem(models.Model):
+class Food(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=128)
     category = models.ForeignKey(FoodCategory, on_delete=models.CASCADE)

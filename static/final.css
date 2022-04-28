@@ -11,16 +11,51 @@ ul {
 }
 
 a {
-    color: rgb(102, 77, 147, 255);
+    color: rgba(234, 108, 141, 255);
+}
+
+#food_title {
+    color: aliceblue !important;
+}
+
+table {
+    border
+}
+
+#goal-table {
+    /* margin-top: 20px; */
+}
+
+#add-button {
+    margin-bottom: 20px;
 }
 
 body {
+    background-color: rgba(52, 55, 70, 255) !important;
+}
+
+.jumbotron {
     background-color: rgb(40, 42, 54, 255) !important;
+}
+
+th {
+    color: rgba(234, 108, 141, 255);
+    font-family: 'Lucida Console', monospace;
+}
+
+td {
+    color: rgba(234, 108, 141, 255);
+    font-family: 'Lucida Console', monospace;
 }
 
 h1 {
     font-family: 'Goldman', cursive;
-    color: rgb(102, 77, 147, 255);
+    color: rgba(234, 108, 141, 255);
+}
+
+h2 {
+    font-family: 'Lucida Console', monospace;
+    color: rgba(234, 108, 141, 255);
 }
 
 .ct-label {
