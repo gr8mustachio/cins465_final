@@ -28,8 +28,56 @@ def main(request):
     }
     return render(request, 'workouts/workouts.html', context)
 
+@login_required(login_url='/login/')
 def add(request):
-    return HttpResponse('add page')
+    if(request.method == 'POST'):
+        if('add' in request.POST):
+            add_form = WorkoutForm(request.POST)
+            if(add_form.is_valid()):
+                workoutEntry = add_form.save(commit=False)
+                workoutEntry.user = request.user
+                workoutEntry.save()
+                return redirect('/workouts/')
+            else:
+                context = {
+                    'form_data': add_form
+                }
+                return render(request, 'workouts/add.html', context)
+        else:
+            #cancel
+            return redirect('/workouts/')
+    else:
+        context = {
+            'form_data': WorkoutForm()
+        }
+        return render(request, 'workouts/add.html', context)
+    #return HttpResponse('add page')
 
+@login_required(login_url='/login/')
 def edit(request,id):
-    return HttpResponse('edit page')
+    if(request.method == 'GET'):
+        #LOAD workout entry form with current model form
+        workout = Workout.objects.get(id=id)
+        form = WorkoutForm(instance=workout)
+        context = { 'form_data': form }
+        return render(request, 'workouts/edit.html', context)
+    elif request.method == 'POST':
+        if 'edit' in request.POST:
+            form = WorkoutForm(request.POST)
+            if form.is_valid():
+                #Saving with commit=False gets you a model object,
+                #then you can add your extra data and save it.
+                workout = form.save(commit=False)
+                workout.user = request.user
+                workout.id = id
+                workout.save()
+                return redirect('/workouts/')
+            else:
+                context = {
+                    'form_data': form,
+                }
+                return render(request, 'workouts/add.html', context)
+        else:
+            #cancel
+            return redirect('/workouts/')
+    #return HttpResponse('edit page')

@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Workout Page</title>
+    <title>Edit Workout</title>
     {% load static %}
     {% include 'bootstrap.html' %}
     <link rel="stylesheet" href="{% static 'final.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Goldman&family=Staatliches&family=Water+Brush&display=swap" rel="stylesheet">
-
 </head>
 <body>
     {% include 'nav.html' %}
     <div class='jumbotron'>
-        <h1>Add Workout</h1>
-        <form method="post">
+        <h1>Edit Workout Stats</h1>
+        <form method="POST">
             {% csrf_token %}
             <table>
                 {{ form_data.as_table }}
@@ -25,12 +24,11 @@
                     <td></td>
                     <td>
                         <a href="/workouts/" class='btn btn-secondary'>Cancel</a>
-                        <input type="submit" class='btn btn-primary' name='add' value='Add Workout'>
+                        <input type="submit" name="edit" class='btn btn-primary' value='Save'>
                     </td>
                 </tr>
             </table>
         </form>
     </div>
-    
 </body>
 </html>

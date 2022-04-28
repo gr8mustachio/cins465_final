@@ -9,7 +9,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from food.models import FoodCategory, Food
 from food.forms import FoodForm
 # Create your views here.
-
+ 
 @login_required(login_url='/login/')
 def main(request):
     if(FoodCategory.objects.count() == 0):
