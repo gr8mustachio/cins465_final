@@ -22,6 +22,11 @@ def main(request):
         MuscleGroup(group = 'Core').save()
         MuscleGroup(group = 'Cardio').save()
         MuscleGroup(group = 'Full Body').save()
+    if(request.method == 'GET' and 'delete' in request.GET):
+        id=request.GET['delete']
+        print(id)
+        Workout.objects.filter(id=id).delete()
+        return redirect("/workouts/")
     workout_data = Workout.objects.filter(user=request.user)
     context = {
         'workout_data': workout_data
