@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     {% load static %}
@@ -21,37 +21,29 @@
     {% include "nav.html" %}
     <center>
         <h1>Final Project: Health Tracker</h1>
-        <p>Home page</p>
+        <h3>Dashboard</h3>
     </center>
     <div class="container">
         <div class="row">
             <div class="col-sm">
                 <div class="ct-chart ct-perfect-fourth" , id="example-pie-chart">
                     <script>
-                        new Chartist.Pie('#example-pie-chart', {
-                            labels: ['Completed', 'Pending'],
-                            series: [30, 60]
-                        }, {
-                            labelInterpolationFnc: function(value) {
-                                return value[0]
-                            }
-                        }, [
-                            ['screen', {
-                                chartPadding: 20,
-                                labelOffset: 60,
-                                labelDirection: 'explode',
-                                labelInterpolationFnc: function(value) {
-                                    return value;
-                                }
-                            }]
-                        ]);
+                        new Chartist.Pie('.ct-chart', {
+                            series: [20, 10]
+                          }, {
+                            donut: true,
+                            donutWidth: 60,
+                            donutSolid: true,
+                            startAngle: 270,
+                            showLabel: true
+                          });
                     </script>
                 </div>
             </div>
             <div class="col-sm">
                 <div class="ct-chart-br ct-perfect-fourth" , id="example-bar-graph">
                     <script>
-                        new Chartist.Bar('.ct-chart', {
+                        new Chartist.Bar('.ct-chart-br', {
                             labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
                             series: [
                                 [5, 4, 3, 7, 5, 10, 3],

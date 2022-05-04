@@ -11,7 +11,9 @@ class WorkoutForm(forms.ModelForm):
     calsburned = forms.IntegerField()
     heartAvg = forms.IntegerField()
 
-    class Meta():
+    class Meta:
         model = Workout
         fields = ('name', 'musclegroup', 'sets', 'reps', 'distance', 'duration', 'calsburned', 'heartAvg')
-        
+        labels = {
+            'name': ('Writer'),
+        }

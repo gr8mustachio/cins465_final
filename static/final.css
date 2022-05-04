@@ -88,13 +88,21 @@ h2 {
     color: rgba(234, 108, 141, 255);
 }
 
+h3 {
+    font-family: 'Lucida Console', monospace;
+    color: rgba(234, 108, 141, 255);
+}
+
+
+/* CHART SECTION */
+
 .ct-label {
     color: white
 }
 
 .ct-series-a .ct-bar {
     /* Colour of your bars */
-    stroke: blue;
+    stroke: rgba(55, 137, 206, 255);
     /* The width of your bars */
     stroke-width: 15px;
     /* Yes! Dashed bars! */
@@ -103,6 +111,26 @@ h2 {
 }
 
 .ct-series-b .ct-bar {
-    stroke: purple;
+    stroke: rgba(174, 137, 230, 255);
     stroke-width: 15px;
+}
+
+.ct-series-a .ct-slice-donut {
+    stroke: rgba(55, 137, 206, 255);
+    stroke-width: 5px !important;
+}
+
+.ct-series-b .ct-slice-donut {
+    stroke: rgba(174, 137, 230, 255);
+    stroke-width: 5px !important;
+}
+
+.ct-series-a .ct-slice-pie {
+    stroke: rgba(55, 137, 206, 255);
+    stroke-width: 5px !important;
+}
+
+.ct-series-a .ct-slice-pie {
+    stroke: rgba(55, 137, 206, 255);
+    stroke-width: 5px !important;
 }
