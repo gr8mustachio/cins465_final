@@ -5,9 +5,21 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from core.forms import JoinForm, LoginForm
+from food.models import Food, FoodCategory
+from workouts.models import Workout, MuscleGroup
 # Create your views here.
 def main(request):
-    return render(request, 'core/home.html')
+    calsBurned = 0
+    calGoal = 350
+    workout_data = Workout.objects.filter(user=request.user)
+    food_data = Food.objects.filter(user=request.user)
+    for data in workout_data:
+        calsBurned += data.calsburned
+    context = {
+        'calsBurned': calsBurned,
+        'calGoal': calGoal
+    }
+    return render(request, 'core/home.html', context)
     #return HttpResponse("Dashboard Home Page")
 
 

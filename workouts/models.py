@@ -1,6 +1,7 @@
 import imp
 from django.db import models
 from django.contrib.auth.models import User
+import datetime
 # Create your models here.
 
 class MuscleGroup(models.Model):
@@ -18,3 +19,4 @@ class Workout(models.Model):
     duration = models.DurationField()
     calsburned = models.PositiveIntegerField()
     heartAvg = models.PositiveSmallIntegerField()
+    date = models.DateField(default=datetime.date.today, null=True)

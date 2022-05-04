@@ -2,6 +2,7 @@ import imp
 from unicodedata import category
 from django.db import models
 from django.contrib.auth.models import User
+import datetime
 # Create your models here.
 
 class FoodCategory(models.Model):
@@ -19,4 +20,5 @@ class Food(models.Model):
     carbs = models.PositiveIntegerField()
     fats = models.PositiveIntegerField()
     sugars = models.PositiveIntegerField()
+    date = models.DateField(default=datetime.date.today, null=True)
 

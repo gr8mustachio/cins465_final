@@ -4,6 +4,7 @@ from food.models import Food, FoodCategory
 
 class FoodForm(forms.ModelForm):
     name = forms.CharField(widget=forms.TextInput(attrs={'size' : '80'}))
+    date = forms.DateField()
     category = forms.ModelChoiceField(queryset=FoodCategory.objects.all())
     calories = forms.IntegerField()
     sodium = forms.IntegerField()
