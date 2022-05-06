@@ -115,6 +115,21 @@ h3 {
     stroke-width: 15px;
 }
 
+.ct-series-c .ct-bar {
+    stroke: rgba(67, 194, 104, 255);
+    stroke-width: 15px;
+}
+
+.ct-series-d .ct-bar {
+    stroke: rgba(255, 205, 64, 255);
+    stroke-width: 15px;
+}
+
+.ct-series-e .ct-bar {
+    stroke: rgba(219, 68, 55, 255);
+    stroke-width: 15px;
+}
+
 .ct-series-a .ct-area,
 .ct-series-a .ct-slice-donut-solid,
 .ct-series-a .ct-slice-pie {

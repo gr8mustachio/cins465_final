@@ -8,6 +8,8 @@ from core.forms import JoinForm, LoginForm
 from food.models import Food, FoodCategory
 from workouts.models import Workout, MuscleGroup
 # Create your views here.
+
+@login_required(login_url='/login/')
 def main(request):
     calsBurned = 0
     calGoal = 350
@@ -18,6 +20,8 @@ def main(request):
     for data in workout_data:
         calsBurned += data.calsburned
     for data in food_data:
+        print(data.name)
+        #name2 = data.name
         name.append(data.name)
         calories.append(data.calories)
         sodium.append(data.sodium)
@@ -34,6 +38,8 @@ def main(request):
         'fats': fats,
         'sugars': sugars
     }
+    print(name, calories, sodium, carbs, fats, sugars)
+    #print(name2)
     return render(request, 'core/home.html', context)
     #return HttpResponse("Dashboard Home Page")
 

@@ -23,6 +23,9 @@
     <center>
         <h1>Final Project: Health Tracker</h1>
         <h3>Dashboard</h3>
+        {% for n in names %}
+            <p>{{ n }}</p>
+        {% endfor %}
     </center>
     <div class="container">
         <div class="row">
@@ -46,10 +49,13 @@
                 <div class="ct-chart-br ct-perfect-fourth" , id="example-bar-graph">
                     <script>
                         new Chartist.Bar('.ct-chart-br', {
-                            labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                            labels: [],
                             series: [
-                                [5, 4, 3, 7, 5, 10, 3],
-                                [3, 2, 9, 5, 4, 6, 4]
+                                {{ calories }},
+                                {{ sodium }},
+                                {{ carbs }},
+                                {{ fats }},
+                                {{ sugars }}
                             ]
                         }, {
                             seriesBarDistance: 10,
