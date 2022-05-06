@@ -11,13 +11,28 @@ from workouts.models import Workout, MuscleGroup
 def main(request):
     calsBurned = 0
     calGoal = 350
+    name, calories, sodium, carbs, = [], [], [], []
+    fats, sugars, date = [], [], []
     workout_data = Workout.objects.filter(user=request.user)
     food_data = Food.objects.filter(user=request.user)
     for data in workout_data:
         calsBurned += data.calsburned
+    for data in food_data:
+        name.append(data.name)
+        calories.append(data.calories)
+        sodium.append(data.sodium)
+        carbs.append(data.carbs)
+        fats.append(data.fats)
+        sugars.append(data.sugars)
     context = {
         'calsBurned': calsBurned,
-        'calGoal': calGoal
+        'calGoal': calGoal,
+        'name': name,
+        'calories': calories,
+        'sodium': sodium,
+        'carbs': carbs,
+        'fats': fats,
+        'sugars': sugars
     }
     return render(request, 'core/home.html', context)
     #return HttpResponse("Dashboard Home Page")
